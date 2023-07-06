@@ -1,24 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import Formulario from "./components/Formulario";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/prueba.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="ml-4 mt-5">
+      <h1 className="text-3xl font-bold">Unplash API </h1>
+      <Formulario />
+      </div>
+     
+    
   );
 }
 
