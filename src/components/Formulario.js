@@ -4,9 +4,11 @@ const Formulario = () => {
     const [busqueda, setBusqueda] = useState("")
     const [photos, setPhotos] = useState([]);
     const submitForm = (e) =>{
+        const url = `https://api.unsplash.com/search/photos?page=1&query=${busqueda}&client_id=5PnA7AcC0TAStqTwCf_2PFkIQdw3YaYvWO5Xrb1H8pE`;
+
         e.preventDefault();
-        console.log(busqueda);
-    }
+        console.log(url);
+    };
     return (
     <div>
         <form onSubmit={submitForm}> 
