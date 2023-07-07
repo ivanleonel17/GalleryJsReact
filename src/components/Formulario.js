@@ -17,7 +17,7 @@ const Formulario = () => {
                 <label>Ingresa un valor</label>
                 <input className="border border-gray-400 p-2 rounded mt-2 w-1/3"
 						type="text"
-            placeholder="Busca una imagen, ejemplo: perro o futbol"
+            placeholder="Busca una imagen, ejemplo: paisajes o futbol"
             onChange={(e) =>setBusqueda(e.target.value)}
             value={busqueda}
            />
