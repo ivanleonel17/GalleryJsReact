@@ -3,12 +3,16 @@ import React,{useState} from "react";
 const Formulario = () => {
     const [busqueda, setBusqueda] = useState("")
     const [photos, setPhotos] = useState([]);
-    const submitForm = (e) =>{
-        const url = `https://api.unsplash.com/search/photos?page=1&query=${busqueda}&client_id=5PnA7AcC0TAStqTwCf_2PFkIQdw3YaYvWO5Xrb1H8pE`;
-
+    
+    const submitForm = async (e) =>{
         e.preventDefault();
-        console.log(url);
+        const url = `https://api.unsplash.com/search/photos?page=1&query=${busqueda}&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        setPhotos(data.results);
+        
     };
+    console.log(photos);
     return (
     <div>
         <form onSubmit={submitForm}> 
