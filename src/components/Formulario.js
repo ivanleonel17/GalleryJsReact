@@ -1,39 +1,28 @@
-import React,{useState} from "react";
+import React from "react";
+import { BsSearch } from "react-icons/bs";
 
-const Formulario = () => {
-    const [busqueda, setBusqueda] = useState("")
-    const [photos, setPhotos] = useState([]);
-    
-    const submitForm = async (e) =>{
-        e.preventDefault();
-        const url = `https://api.unsplash.com/search/photos?page=1&query=${busqueda}&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`;
-        const res = await fetch(url);
-        const data = await res.json();
-        setPhotos(data.results);
-        
-    };
-    console.log(photos);
-    return (
+const Formulario = ({ busqueda, setBusqueda, submitForm }) => {
+  return (
     <div>
-        <form onSubmit={submitForm}> 
-            
-            <div className="flex flex-col mt-4">
-                <label>Ingresa un valor</label>
-                <input className="border border-gray-400 p-2 rounded mt-2 w-1/3"
-						type="text"
-            placeholder="Busca una imagen, ejemplo: paisajes o futbol"
-            onChange={(e) =>setBusqueda(e.target.value)}
+      <form onSubmit={submitForm}>
+        <div className="flex mt-4 ml-5">
+          <input
+            className="appearance-none border-t border-l border-b border-gray-300 py-2 px-4 rounded-l-lg w-1/2 focus:outline-none focus:border-blue-500"
+            type="text"
+            placeholder="Search"
+            onChange={(e) => setBusqueda(e.target.value)}
             value={busqueda}
-           />
-            <button className="inline bg-teal-500 rounded-sm w-1/5 mt-4 text-white p-2 hover:bg-teal-600 transition-all"
-						 type="submit">Buscar
-            
-            </button>
+          />
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg"
+            type="submit"
+          >
+            <BsSearch />
+          </button>
         </div>
-        
-        </form>
-</div>
-);
-}
+      </form>
+    </div>
+  );
+};
 
 export default Formulario;
