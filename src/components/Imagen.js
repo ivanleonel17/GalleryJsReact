@@ -15,10 +15,11 @@ const Imagen = (props) => {
         <p>Camara: {props.photo.exif && props.photo.exif.model}</p>
         <p>Etiquetas:</p>
         <ul>
-          {props.photo.tags.map((tag) => (
-            <li key={tag.title}>{tag.title}</li>
-          ))}
+         {props.photo.tags?.map((tag) => (
+         <li key={tag.title}>{tag.title}</li>
+            ))}
         </ul>
+
       </div>
     </article>
   );
