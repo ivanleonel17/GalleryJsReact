@@ -10,17 +10,20 @@ const Imagen = (props) => {
         className="h-52 w-full object-cover rounded-3xl md:h-80"
       />
 
-      <div>
-        <p>Ubicacion fotografia: {props.photo.user.location}</p>
-        <p>Camara: {props.photo.exif && props.photo.exif.model}</p>
-        <p>Etiquetas:</p>
-        <ul>
-         {props.photo.tags?.map((tag) => (
-         <li key={tag.title}>{tag.title}</li>
-            ))}
-        </ul>
+<div className="mt-3">
+  <p>Ubicacion fotografia: {props.photo.user.location}</p>
+  <p>Camara: {props.photo.exif && props.photo.exif.model}</p>
 
-      </div>
+  <div className="flex flex-wrap">
+    {props.photo.tags?.map((tag) => (
+      <p key={tag.title} className="text-red-500 font-bold mr-2 mb-2">
+        {tag.title}
+      </p>
+    ))}
+  </div>
+</div>
+
+
     </article>
   );
 };
