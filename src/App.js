@@ -49,6 +49,23 @@ function App() {
     }
   };
 
+  const loadMoreImages = async () => {
+    try {
+      setLoading(true);
+      setMessage("");
+      const nextPage = Math.ceil(photos.length / 10) + 1;
+      const url = `https://api.unsplash.com/photos/random?count=10&page=${nextPage}&client_id=${process.env.REACT_APP_UNSPLASH_ACCESS_KEY}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      setPhotos((prevPhotos) => [...prevPhotos, ...data]);
+    } catch (error) {
+      console.error(error);
+      setMessage("Error al cargar más imágenes");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <Formulario
@@ -57,7 +74,11 @@ function App() {
         submitForm={submitForm}
       />
       {message && <p className="text-red-500">{message}</p>}
-      {loading ? <p>Cargando...</p> : <ListadoImagenes photos={photos} />}
+      <ListadoImagenes photos={photos} setPhotos={setPhotos} />
+      {loading && <p>Cargando...</p>}
+      {!loading && (
+        <button onClick={loadMoreImages}>Cargar más imágenes</button>
+      )}
     </div>
   );
 }
