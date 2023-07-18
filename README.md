@@ -28,6 +28,7 @@ Este proyecto de galería ha sido desarrollado como parte de un trabajo práctic
 ![image](https://github.com/ivanleonel17/GalleryJsReact/assets/131780793/a404455b-1858-46bd-9c8c-85eeb3c83d2a)
 
 ## Link 
+ivanleonel17.github.io/GalleryJsReact/
 
 
 
