@@ -21,5 +21,10 @@ Este proyecto de galería ha sido desarrollado como parte de un trabajo práctic
 3. Configura las variables de entorno: Crea un archivo `.env` en la raíz del proyecto y proporciona la clave de la API de Unsplash (ejemplo: `REACT_APP_UNSPLASH_API_KEY=your-api-key`).
 4. Inicia la aplicación: `npm start`
 
+## Proyecto tomado como modelo
+![image](https://github.com/ivanleonel17/GalleryJsReact/assets/131780793/a404455b-1858-46bd-9c8c-85eeb3c83d2a)
+
+## Captura de pantalla
+![image](https://github.com/ivanleonel17/GalleryJsReact/assets/131780793/821fc514-ce58-494b-9ad6-4c059c6d3bf1)
 
 
