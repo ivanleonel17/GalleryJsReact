@@ -1,17 +1,21 @@
 .placeholder-color::placeholder {
     color: #8099AD;
-    font-weight: 600;
-    font-size: 1.2rem;
+    font-weight: bold;
   }
   
   .search-icon {
     color: #5A7189;
     stroke-width: 1px;
+    transition: transform 0.3s;
+  }
+  
+  .search-icon:hover {
+    transform: scale(1.2);
   }
   
   .line {
     background-color: #8193A7;
-    height: 2.2px;
-   
+    height: 1px;
   }
+  
   
