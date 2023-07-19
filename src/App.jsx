@@ -1,4 +1,3 @@
-// app.js
 import { useState, useEffect } from "react";
 import Formulario from "./components/Formulario";
 import ListadoImagenes from "./components/ListadoImagenes";
