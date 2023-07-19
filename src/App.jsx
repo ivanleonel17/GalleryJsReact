@@ -3,16 +3,27 @@ import Formulario from "./components/Formulario";
 import ListadoImagenes from "./components/ListadoImagenes";
 
 function App() {
+  // almacenar el termino de búsqueda del usuario
   const [busqueda, setBusqueda] = useState("");
+
+  // almacenar las fotos obtenidas de Unsplash
   const [photos, setPhotos] = useState([]);
+
+  // mostrar mensajes al usuario
   const [message, setMessage] = useState("");
+
+  // indica si se estan cargando datos
   const [loading, setLoading] = useState(false);
+
+  // controla si hay mas imagenes disponibles para cargar
   const [hasMore, setHasMore] = useState(true);
 
+  // Al cargar la aplicación se obtienen fotos aleatorias
   useEffect(() => {
     fetchRandomPhotos();
   }, []);
 
+  // Funcion para obtener fotos aleatorias de Unsplash 
   const fetchRandomPhotos = async () => {
     try {
       setLoading(true);
@@ -29,6 +40,7 @@ function App() {
     }
   };
 
+  // Funcion para cargar mas imagenes cuando el usuario llega al final de la pagina
   const loadMoreImages = async () => {
     try {
       setLoading(true);
@@ -54,10 +66,8 @@ function App() {
       setLoading(false);
     }
   };
-  
-  
-  
 
+  // Funcion para realizar la busqueda de imágenes en Unsplash 
   const submitForm = async (e) => {
     e.preventDefault();
     try {
@@ -84,23 +94,28 @@ function App() {
       setLoading(false);
     }
   };
-  
-  
 
   return (
     <div className="container mx-auto">
+      {/* Componente Formulario para realizar busquedas */}
       <Formulario
         busqueda={busqueda}
         setBusqueda={setBusqueda}
         submitForm={submitForm}
       />
+
+      {/* Mostrar mensajes de error */}
       {message && <p className="text-red-500">{message}</p>}
+
+      {/* Componente ListadoImagenes para mostrar las imágenes */}
       <ListadoImagenes
         photos={photos}
         setPhotos={setPhotos}
         loadMoreImages={loadMoreImages}
         hasMore={hasMore}
       />
+
+      {/* Mostrar mensaje de carga */}
       {loading && <p>Cargando...</p>}
     </div>
   );

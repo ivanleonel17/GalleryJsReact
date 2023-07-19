@@ -5,6 +5,8 @@ import "./Formulario.css";
 const Formulario = ({ busqueda, setBusqueda, submitForm }) => {
   const inputRef = useRef(null);
 
+// Funcion para manejar la busqueda al hacer clic en el boton o presionar Enter
+
   const handleSearch = (e) => {
     e.preventDefault();
     if (typeof submitForm === "function") {

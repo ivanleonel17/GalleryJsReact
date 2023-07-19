@@ -1,27 +1,28 @@
+/* Estilos para el input del formulario */
 .placeholder-color::placeholder {
     color: #8099AD;
     font-weight: bold;
   }
-  
+  /* Estilos para el icono de busqueda */
   .search-icon {
     color: #5A7189;
     stroke-width: 1px;
     transition: transform 0.3s;
   }
-  
+  /* Estilos para el icono de busqueda al hacer hover */
   .search-icon:hover {
     transform: scale(1.4);
   }
-  
+  /* Estilos para la linea debajo del input */
   .line {
     background-color: #8193A7;
     height: 2.8px;
   }
-  
+  /* Estilos para el articulo que contiene cada imagen */
   article {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-  
+  /* Estilos para el articulo al hacer hover */
   article:hover {
     transform: scale(1.05); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
